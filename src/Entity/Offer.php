@@ -48,15 +48,14 @@ class Offer
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $endedAt;
-
+    private $endingAt;
     /**
      * @ORM\ManyToOne(targetEntity=Contract::class, inversedBy="offers")
      */
@@ -149,24 +148,25 @@ class Offer
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
-    public function getEndedAt(): ?\DateTimeInterface
+    public function getEndingAt(): ?\DateTimeInterface
     {
-        return $this->endedAt;
+        return $this->endingAt;
     }
 
-    public function setEndedAt(\DateTimeInterface $endedAt): self
+    public function setEndingAt(?\DateTimeInterface $endingAt): self
     {
-        $this->endedAt = $endedAt;
+        $this->endingAt = $endingAt;
 
         return $this;
     }
+
 
     public function getContract(): ?Contract
     {

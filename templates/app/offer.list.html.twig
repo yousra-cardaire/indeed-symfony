@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to Injobs!
+{% endblock %}
+
+{% block body %}
+	{% include "components/_navbar.html.twig" %}
+
+	<div class="container my-3">
+		<div class="row">
+			{% for offer in offer_list %}
+				<div class="col-md-3 mt-2">
+					<div class="card">
+						<div class="card-body">
+							<a href="{{ path("offers.show", {id: offer.id}) }} ">
+								<h2>
+									{{ offer.title }}
+								</h2>
+							</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
