@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container my-3">
+		<h1>
+			Edit offer
+		</h1>
+
+		{{ form(form)}}
+
+			{# <p>
+										<a href="{{path("offers.delete", {id: offer.id})}}" class="btn btn-danger">delete offer</a>
+									</p> #}
+		{% endblock %}

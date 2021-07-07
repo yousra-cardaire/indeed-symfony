@@ -5,5 +5,13 @@
 		<h1>
 			{{offer.title}}
 		</h1>
+		<p>
+			<a href="{{path("offers.delete", {id: offer.id})}}" class="btn btn-danger">delete offer</a>
+		</p>
+
+		<p>
+			<a href="{{path("offers.edit", {id: offer.id})}}" class="btn btn-success">edit offer</a>
+		</p>
+
 	</div>
 {% endblock %}
